@@ -2,6 +2,7 @@ from ultralytics import YOLO
 
 # 1. 모델 로드
 model = YOLO("yolo11n.pt")
+print(model.names)
 
 # 2. 모델 추론(파라미터 튜닝)
 # model(
