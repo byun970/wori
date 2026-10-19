@@ -1,9 +1,15 @@
+import os               # 환경변수(.env) 읽는 도구
 import urllib.request   # 인터넷 주소로 자료 요청하는 도구
 import json             # 글자로 된 자료를 사전(dict)모양으로 바꾸는 도구
 import pandas as pd     # 자료를 엑셀 같은 표로 다루는 도구
+from dotenv import load_dotenv  # .env 파일을 읽어 환경변수로 등록하는 도구
+
+load_dotenv()  # .env 파일의 키=값을 환경변수로 불러옴
 
 # 1. 인증키
-key = "db5c00dc1fce45c49049bff225a0fea6"
+key = os.getenv("ITS_API_KEY")
+if not key:
+    raise ValueError("ITS_API_KEY가 설정되지 않았습니다. .env 파일을 확인하세요.")
 # 과금 우려있는 API KEY는 코드 노출 그리고 깃허브에 업로드 하지 않음
 # .env 환경변수로 관리
 
