@@ -2,7 +2,6 @@
 .conda/
 __pycache__/
 
-# API 키 등 민감 정보
 .env
 
 # YOLO 모델 가중치
